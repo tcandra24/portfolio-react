@@ -32,7 +32,7 @@ const PersonalPortfolio = () => {
         <div className="bg-[url(/assets/images/overlay-noise.png)] bg-cover bg-no-repeat pt-14 lg:pt-20">
           <div className="container">
             <div className="relative">
-              <div className="text-center lg:w-2/3 lg:ltr:text-left lg:rtl:text-right">
+              <div className="text-center lg:w-2/3 lg:ltr:text-left mb-16 lg:rtl:text-right">
                 <div className="mx-auto mb-5 flex h-[100px] max-w-[255px] items-center lg:float-left lg:mr-7 lg:mb-0">
                   <img
                     src="/assets/images/personal-portfolio/website-apps.png"
@@ -74,45 +74,6 @@ const PersonalPortfolio = () => {
                   </svg>
                 </h2>
               </div>
-              <div className="relative py-10 text-white md:py-16 lg:max-w-[330px]">
-                <input
-                  type="text"
-                  placeholder="Enter your email"
-                  className="w-full bg-secondary/10 py-6 pl-7 pr-32 text-left placeholder:font-bold placeholder:text-white focus-within:outline-none"
-                />
-                <button
-                  type="button"
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 bg-secondary py-3 px-5 text-lg font-extrabold transition hover:bg-primary"
-                >
-                  Join us
-                </button>
-              </div>
-              <div className="grid gap-y-10 gap-x-6 pb-14 text-sm font-extrabold sm:grid-cols-3 lg:max-w-[490px] lg:pb-24">
-                <div className="text-center">
-                  <img
-                    src="/assets/images/personal-portfolio/logo-1.svg"
-                    alt=""
-                    className="mx-auto mb-4"
-                  />
-                  <p>Awarded as Best Design & Creative</p>
-                </div>
-                <div className="text-center">
-                  <img
-                    src="/assets/images/personal-portfolio/logo-2.svg"
-                    alt=""
-                    className="mx-auto mb-4"
-                  />
-                  <p>Top-1 Trending Team on Dribbble</p>
-                </div>
-                <div className="text-center">
-                  <img
-                    src="/assets/images/personal-portfolio/logo-3.svg"
-                    alt=""
-                    className="mx-auto mb-4"
-                  />
-                  <p>Top User Experience Agency</p>
-                </div>
-              </div>
               <div className="absolute bottom-0 hidden w-3/4 ltr:-right-40 rtl:-left-40 rtl:rotate-y-180 lg:block">
                 <img
                   src="/assets/images/personal-portfolio/women-banner.png"
@@ -121,18 +82,6 @@ const PersonalPortfolio = () => {
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 />
-                <div className="absolute top-[32%] left-4">
-                  <img
-                    src="/assets/images/personal-portfolio/enterpreneurship-rocket.png"
-                    alt=""
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                  />
-                  <img
-                    src="/assets/images/personal-portfolio/enterpreneurship-text.png"
-                    alt=""
-                    className="animate-spin-slow"
-                  />
-                </div>
               </div>
             </div>
           </div>
