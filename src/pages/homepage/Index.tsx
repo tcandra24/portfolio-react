@@ -9,8 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css";
 
 const PersonalPortfolio = () => {
-  document.title =
-    "Personal Portfolio | Plurk – Tailwind CSS Multipurpose Landing Templates";
+  document.title = "Personal Portfolio | Tito Candra Pratama";
   const isRtl =
     useSelector((state: IRootState) => state.themeConfig.direction) === "rtl"
       ? true
