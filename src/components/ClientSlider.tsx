@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { IRootState } from "../store";
+import { IRootState } from "@/store";
 
 const ClientSlider = ({
   type = "common",

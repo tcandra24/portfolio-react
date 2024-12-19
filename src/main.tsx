@@ -2,7 +2,7 @@ import { Suspense } from "react";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./assets/css/main.css";
+import "@/assets/css/main.css";
 
 // Router
 import { RouterProvider } from "react-router-dom";

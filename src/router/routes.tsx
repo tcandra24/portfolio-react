@@ -1,5 +1,5 @@
 import { lazy } from "react";
-const Index = lazy(() => import("../pages/homepage/Index"));
+const Index = lazy(() => import("@/pages/homepage/Index"));
 
 const routes = [
   {

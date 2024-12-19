@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { IRootState } from "../store";
-import { toggleTheme, toggleDirection } from "../store/themeConfigSlice";
+import { IRootState } from "@/store";
+import { toggleTheme, toggleDirection } from "@/store/themeConfigSlice";
 
 const Header = (props: any) => {
   const themeConfig = useSelector((state: IRootState) => state.themeConfig);

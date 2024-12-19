@@ -1,9 +1,9 @@
 import { PropsWithChildren, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import App from "../App";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import App from "@/App";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { useLocation } from "react-router-dom";
 
 const DefaultLayout = ({ children }: PropsWithChildren) => {

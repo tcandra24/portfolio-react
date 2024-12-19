@@ -1,8 +1,8 @@
 import CountUp from "react-countup";
-import ClientSlider from "../../components/ClientSlider";
+import ClientSlider from "@/components/ClientSlider";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { IRootState } from "../../store";
+import { IRootState } from "@/store";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css/navigation";
