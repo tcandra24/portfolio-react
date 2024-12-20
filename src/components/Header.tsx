@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IRootState } from "@/store";
 import { toggleTheme, toggleDirection } from "@/store/themeConfigSlice";
 
 const Header = (props: any) => {
   const themeConfig = useSelector((state: IRootState) => state.themeConfig);
   const dispatch = useDispatch();
-  const location = useLocation();
 
   const [showMenu, setShowMenu] = useState(false);
-  ``;
   const toggleMenu = () => {
     if (window.innerWidth < 1024) {
       setShowMenu(!showMenu);

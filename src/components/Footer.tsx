@@ -100,10 +100,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/portfolio"
+                  to="/projects"
                   className="inline-block transition hover:scale-110 hover:text-secondary"
                 >
-                  projects
+                  Projects
                 </Link>
               </li>
             </ul>

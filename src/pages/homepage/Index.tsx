@@ -1,10 +1,9 @@
 import CountUp from "react-countup";
-import ClientSlider from "@/components/ClientSlider";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { IRootState } from "@/store";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css";
 
@@ -14,17 +13,6 @@ const PersonalPortfolio = () => {
     useSelector((state: IRootState) => state.themeConfig.direction) === "rtl"
       ? true
       : false;
-
-  const feedbacks = [
-    {
-      id: 1,
-      name: "amelia smith",
-      role: "Founder of Alpha Design",
-      thumbnail: "/assets/images/personal-portfolio/customer-avatar.svg",
-      message:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
-    },
-  ];
 
   return (
     <div className="overflow-hidden">
