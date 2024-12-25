@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import tailwindTypography from "@tailwindcss/typography";
 import plugin from "tailwindcss/plugin";
+import daisyui from "daisyui";
 
 const rotateX = plugin(function ({ addUtilities }) {
   addUtilities({
@@ -54,5 +55,5 @@ export default {
       }),
     },
   },
-  plugins: [rotateX, tailwindTypography],
+  plugins: [rotateX, tailwindTypography, daisyui],
 };

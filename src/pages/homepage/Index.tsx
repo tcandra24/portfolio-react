@@ -7,12 +7,45 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css";
 
+import ProjectSlider from "@/components/ProjectSlider";
+import { useEffect, useState } from "react";
+
 const PersonalPortfolio = () => {
   document.title = "Personal Portfolio | Tito Candra Pratama";
   const isRtl =
     useSelector((state: IRootState) => state.themeConfig.direction) === "rtl"
       ? true
       : false;
+
+  const [projects, setProjects] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://api.jsonbin.io/v3/b/676ab6bce41b4d34e46a8280",
+        {
+          headers: {
+            "X-Master-Key": import.meta.env.VITE_MASTER_KEY,
+            "X-Access-Key": import.meta.env.VITE_ACCESS_KEY,
+            "X-Bin-Meta": "false",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Error when get the data");
+      }
+
+      const json = await response.json();
+      setProjects(json.projects);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="overflow-hidden">
@@ -29,7 +62,7 @@ const PersonalPortfolio = () => {
                   />
                 </div>
                 <h2 className="relative text-3xl font-black text-white sm:text-5xl lg:text-[80px] lg:leading-[100px] z-30">
-                  I make beautiful web site and apps!
+                  Hello Friend, I am Tito Software Engineer
                   <svg
                     width="59"
                     height="107"
@@ -80,7 +113,7 @@ const PersonalPortfolio = () => {
         <div className="container">
           <div className="items-center lg:flex">
             <h2 className="flex-none border-gray/20 text-center text-xl font-black uppercase text-black dark:text-white lg:ltr:mr-12 lg:ltr:border-r-[3px] lg:ltr:pr-12 lg:ltr:text-left lg:rtl:ml-12 lg:rtl:border-l-[3px] lg:rtl:pl-12 lg:rtl:text-right">
-              PREVIOUSLY WORKED ON
+              MY WORKPLACE
             </h2>
             <Swiper
               className="mt-10 flex-1 lg:mt-0 xl:w-[1200px] xl:flex-none"
@@ -112,43 +145,19 @@ const PersonalPortfolio = () => {
             >
               <SwiperSlide>
                 <div>
-                  <img src="/assets/images/logo-1.svg" alt="" />
+                  <img
+                    src="/assets/images/fuboru-indonesia.png"
+                    alt=" Fuboru Indonesia"
+                  />
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
                 <div>
-                  <img src="/assets/images/logo-2.svg" alt="" />
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <div>
-                  <img src="/assets/images/logo-3.svg" alt="" />
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <div>
-                  <img src="/assets/images/logo-4.svg" alt="" />
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <div>
-                  <img src="/assets/images/logo-5.svg" alt="" />
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <div>
-                  <img src="/assets/images/logo-6.svg" alt="" />
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <div>
-                  <img src="/assets/images/logo-7.svg" alt="" />
+                  <img
+                    src="/assets/images/widaya-inti-plasma.png"
+                    alt="Widaya Inti Plasma"
+                  />
                 </div>
               </SwiperSlide>
             </Swiper>
@@ -193,27 +202,35 @@ const PersonalPortfolio = () => {
                   <span className="text-primary">/</span> About ME
                 </h6>
                 <h2 className="text-3xl font-black leading-normal text-black dark:text-white md:text-[40px]">
-                  I’ve been designing websites since 2010
+                  I Coding Since 2013
                 </h2>
               </div>
-              <p className="text-lg font-medium">
-                Excerpter sent occaecat cuspidate non provident, sent in culpa
-                qui official deferent mullet anima id est labarum acute inure
-                dolor reprehenderit in voluptate velit esse chillum dolore eu
-                fugit.
+              <p className="text-lg font-medium text-justify">
+                Hello my name is
+                <span className="font-bold">Tito Candra Pratama</span>, I am a
+                work at Fuboru Indonesia as a software engineer I have passion
+                in several programming languages especially Javascript, PHP,
+                Python. I also have several web-based projects on Javascript and
+                I am actively following the development of Javascript Frameworks
+                like <span className="font-bold">Vue</span>,{" "}
+                <span className="font-bold">React</span>,{" "}
+                <span className="font-bold">Svelte</span> and{" "}
+                <span className="font-bold">Angular</span>, One of my projects
+                is the website you are visiting today. this website using React
+                and Tailwind as CSS Framework.
               </p>
               <div className="my-6 grid gap-4 text-lg font-bold text-black dark:text-white sm:mt-12 sm:mb-8 sm:grid-cols-2">
                 <div className="flex items-center gap-3">
                   <h2 className="text-4xl font-black text-primary md:text-7xl">
-                    12
+                    4+
                   </h2>
                   <p>Years of experience</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <h2 className="text-4xl font-black text-secondary md:text-7xl">
-                    150
+                    50+
                   </h2>
-                  <p>Successful projects</p>
+                  <p>Github projects</p>
                 </div>
               </div>
               <p className="text-lg font-medium">
@@ -228,22 +245,16 @@ const PersonalPortfolio = () => {
 
       <section className="bg-white py-14 dark:bg-gray-dark md:py-20">
         <div className="container">
-          <div className="grid rounded-[10px] border-[2px] border-secondary/20 text-center font-semibold text-black dark:text-white sm:grid-cols-3 sm:ltr:text-left sm:rtl:text-right lg:text-xl">
+          <div className="grid rounded-[10px] border-[2px] border-secondary/20 text-center font-semibold text-black dark:text-white sm:grid-cols-2 sm:ltr:text-left sm:rtl:text-right lg:text-xl">
             <div className="px-5 py-8 md:py-10 md:px-12">
               <div className="mb-4 text-[40px] font-extrabold text-primary">
-                <CountUp start={0} end={5} duration={10} suffix="+"></CountUp>
+                <CountUp start={0} end={4} duration={10} suffix="+"></CountUp>
               </div>
               <h6>Years of experience</h6>
             </div>
-            <div className="bg-secondary/10 px-5 py-8 md:py-10 md:px-12">
-              <div className="mb-4 text-[40px] font-extrabold text-secondary">
-                <CountUp start={0} end={99} duration={10} suffix="+"></CountUp>
-              </div>
-              <h6>Client Satisfied</h6>
-            </div>
             <div className="px-5 py-8 md:py-10 md:px-12">
               <div className="mb-4 text-[40px] font-extrabold text-primary">
-                <CountUp start={0} end={255} duration={10} suffix="+"></CountUp>
+                <CountUp start={0} end={10} duration={10} suffix="+"></CountUp>
               </div>
               <h6>Projects complete</h6>
             </div>
@@ -251,162 +262,11 @@ const PersonalPortfolio = () => {
         </div>
       </section>
 
-      <section className="bg-gradient-to-t from-white/50 to-transparent py-14 dark:from-white/[0.02] md:py-20">
-        <div className="container">
-          <div className="mb-10">
-            <h6 className="mb-4 text-lg font-extrabold uppercase text-secondary">
-              <span className="text-primary">/</span> services
-            </h6>
-            <h2 className="text-3xl font-black leading-tight text-black dark:text-white md:text-[40px]">
-              My extensive list of skills
-            </h2>
-          </div>
-          <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
-            <div data-aos="fade-up" data-aos-duration="1000">
-              <div className="relative border-[2px] border-white bg-gradient-to-b from-white/50 to-transparent p-5 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition hover:border-secondary/50 hover:bg-secondary/20 dark:border-[rgba(119,128,161,0.15)] dark:bg-black dark:from-transparent dark:shadow-none dark:hover:border-secondary/50 dark:hover:bg-secondary/10 md:p-8">
-                <Link to="#" className="absolute inset-0 h-full w-full"></Link>
-                <div className="flex h-[60px] w-[60px] items-center justify-center bg-primary/10">
-                  <img
-                    src="/assets/images/personal-portfolio/ui-ux-icon.svg"
-                    alt=""
-                  />
-                </div>
-                <h5 className="pt-7 pb-3 text-[22px] font-bold text-black dark:text-white">
-                  UI/UX Design
-                </h5>
-                <p className="text-lg leading-loose line-clamp-3">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
-                </p>
-              </div>
-            </div>
-            <div data-aos="fade-up" data-aos-duration="1000">
-              <div className="relative border-[2px] border-white bg-gradient-to-b from-white/50 to-transparent p-5 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition hover:border-secondary/50 hover:bg-secondary/20 dark:border-[rgba(119,128,161,0.15)] dark:bg-black dark:from-transparent dark:shadow-none dark:hover:border-secondary/50 dark:hover:bg-secondary/10 md:p-8">
-                <Link to="#" className="absolute inset-0 h-full w-full"></Link>
-                <div className="flex h-[60px] w-[60px] items-center justify-center bg-primary/10">
-                  <img
-                    src="/assets/images/personal-portfolio/product-icon.svg"
-                    alt=""
-                  />
-                </div>
-                <h5 className="pt-7 pb-3 text-[22px] font-bold text-black dark:text-white">
-                  Product Design
-                </h5>
-                <p className="text-lg leading-loose line-clamp-3">
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s.
-                </p>
-              </div>
-            </div>
-            <div data-aos="fade-up" data-aos-duration="1000">
-              <div className="relative border-[2px] border-white bg-gradient-to-b from-white/50 to-transparent p-5 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition hover:border-secondary/50 hover:bg-secondary/20 dark:border-[rgba(119,128,161,0.15)] dark:bg-black dark:from-transparent dark:shadow-none dark:hover:border-secondary/50 dark:hover:bg-secondary/10 md:p-8">
-                <Link to="#" className="absolute inset-0 h-full w-full"></Link>
-                <div className="flex h-[60px] w-[60px] items-center justify-center bg-primary/10">
-                  <img
-                    src="/assets/images/personal-portfolio/graphic-icon.svg"
-                    alt=""
-                  />
-                </div>
-                <h5 className="pt-7 pb-3 text-[22px] font-bold text-black dark:text-white">
-                  Motion Graphics
-                </h5>
-                <p className="text-lg leading-loose line-clamp-3">
-                  When an unknown printer took a galley of type and scrambled it
-                  to make a type specimen book.
-                </p>
-              </div>
-            </div>
-            <div data-aos="fade-up" data-aos-duration="1000">
-              <div className="relative border-[2px] border-white bg-gradient-to-b from-white/50 to-transparent p-5 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition hover:border-secondary/50 hover:bg-secondary/20 dark:border-[rgba(119,128,161,0.15)] dark:bg-black dark:from-transparent dark:shadow-none dark:hover:border-secondary/50 dark:hover:bg-secondary/10 md:p-8">
-                <Link to="#" className="absolute inset-0 h-full w-full"></Link>
-                <div className="flex h-[60px] w-[60px] items-center justify-center bg-primary/10">
-                  <img
-                    src="/assets/images/personal-portfolio/web-design-icon.svg"
-                    alt=""
-                  />
-                </div>
-                <h5 className="pt-7 pb-3 text-[22px] font-bold text-black dark:text-white">
-                  Web Design
-                </h5>
-                <p className="text-lg leading-loose line-clamp-3">
-                  It has survived not only five centuries, but also the leap
-                  into electronic typesetting.
-                </p>
-              </div>
-            </div>
-            <div data-aos="fade-up" data-aos-duration="1000">
-              <div className="relative border-[2px] border-white bg-gradient-to-b from-white/50 to-transparent p-5 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition hover:border-secondary/50 hover:bg-secondary/20 dark:border-[rgba(119,128,161,0.15)] dark:bg-black dark:from-transparent dark:shadow-none dark:hover:border-secondary/50 dark:hover:bg-secondary/10 md:p-8">
-                <Link to="#" className="absolute inset-0 h-full w-full"></Link>
-                <div className="flex h-[60px] w-[60px] items-center justify-center bg-primary/10">
-                  <img
-                    src="/assets/images/personal-portfolio/research-icon.svg"
-                    alt=""
-                  />
-                </div>
-                <h5 className="pt-7 pb-3 text-[22px] font-bold text-black dark:text-white">
-                  User Research
-                </h5>
-                <p className="text-lg leading-loose line-clamp-3">
-                  All the Lorem Ipsum generators on the Internet tend to repeat
-                  chunks as necessary
-                </p>
-              </div>
-            </div>
-            <div data-aos="fade-up" data-aos-duration="1000">
-              <div className="relative border-[2px] border-white bg-gradient-to-b from-white/50 to-transparent p-5 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition hover:border-secondary/50 hover:bg-secondary/20 dark:border-[rgba(119,128,161,0.15)] dark:bg-black dark:from-transparent dark:shadow-none dark:hover:border-secondary/50 dark:hover:bg-secondary/10 md:p-8">
-                <Link to="#" className="absolute inset-0 h-full w-full"></Link>
-                <div className="flex h-[60px] w-[60px] items-center justify-center bg-primary/10">
-                  <img
-                    src="/assets/images/personal-portfolio/app-development-icon.svg"
-                    alt=""
-                  />
-                </div>
-                <h5 className="pt-7 pb-3 text-[22px] font-bold text-black dark:text-white">
-                  App Development
-                </h5>
-                <p className="text-lg leading-loose line-clamp-3">
-                  It uses a dictionary of over 200 Latin words, combined with a
-                  handful of model sentence structures
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-gradient-to-t from-white/50 to-transparent py-16 dark:from-white/[0.02]">
-        <div className="container">
-          <div className="grid items-center gap-10 md:grid-cols-2">
-            <div className="text-center text-lg font-medium md:ltr:text-left md:rtl:text-right">
-              <h2 className="mb-3 text-3xl font-black leading-normal text-black dark:text-white md:text-[40px]">
-                Making Complex Digital Products
-              </h2>
-              <p>
-                In publishing and graphic design, Lorem ipsum is a text commonly
-                used to demonstrate the visual form of a document or a typeface
-                without relying on meaningful content.
-              </p>
-              <div className="mt-8">
-                <Link
-                  to="#"
-                  className="bg-secondary py-3 px-5 font-bold text-white transition hover:bg-primary"
-                >
-                  Explore
-                </Link>
-              </div>
-            </div>
-            <div>
-              <img
-                src="/assets/images/personal-portfolio/digital-product.png"
-                alt=""
-                className="h-full w-full object-cover rtl:rotate-y-180"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProjectSlider
+        title1="Our Project"
+        title2="Some of our work."
+        projects={projects}
+      />
 
       <section className="bg-black py-10 md:py-0">
         <div className="container">

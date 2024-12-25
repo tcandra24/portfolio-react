@@ -73,16 +73,6 @@ const ProjectSlider = (props: any) => {
             </div>
           </div>
         </div>
-        {/* <div className="overflow-x-auto">
-                        <ul className="flex gap-8 lg:gap-10 font-bold mb-10 mt-10 lg:mt-0 w-[700px] md:w-auto">
-                            <li className="text-secondary"><button type="button">All Work</button></li>
-                            <li><button type="button" className="hover:text-secondary transition">Design</button></li>
-                            <li><button type="button" className="hover:text-secondary transition">Website</button></li>
-                            <li><button type="button" className="hover:text-secondary transition">Mobile App</button></li>
-                            <li><button type="button" className="hover:text-secondary transition">Web Application</button></li>
-                            <li><button type="button" className="hover:text-secondary transition">Ecommerce</button></li>
-                        </ul>
-                    </div>  */}
       </div>
       <div className="swiper project-slider px-6">
         <div className="swiper-wrapper">
@@ -113,101 +103,31 @@ const ProjectSlider = (props: any) => {
             dir={isRtl ? "rtl" : "ltr"}
             key={isRtl ? "true" : "false"}
           >
-            <SwiperSlide>
-              <div className="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                <Link
-                  to="/portfolio-detail"
-                  className="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"
-                ></Link>
-                <img
-                  src="/assets/images/project-2.png"
-                  alt="project-2"
-                  className="h-52 w-full rounded-t-3xl object-cover"
-                />
-                <div className="p-5 text-sm font-bold">
-                  <h6 className="mb-1 text-black line-clamp-1 dark:text-white">
-                    Crypto Game - UX Interface
-                  </h6>
-                  <p>Website, App</p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                <Link
-                  to="/portfolio-detail"
-                  className="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"
-                ></Link>
-                <img
-                  src="/assets/images/project-3.png"
-                  alt="project-3"
-                  className="h-52 w-full rounded-t-3xl object-cover"
-                />
-                <div className="p-5 text-sm font-bold">
-                  <h6 className="mb-1 text-black line-clamp-1 dark:text-white">
-                    Looking for a quiet place
-                  </h6>
-                  <p>Website</p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                <Link
-                  to="/portfolio-detail"
-                  className="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"
-                ></Link>
-                <img
-                  src="/assets/images/project-4.png"
-                  alt="project-4"
-                  className="h-52 w-full rounded-t-3xl object-cover"
-                />
-                <div className="p-5 text-sm font-bold">
-                  <h6 className="mb-1 text-black line-clamp-1 dark:text-white">
-                    WeTour - Travel Hero Illustration
-                  </h6>
-                  <p>Website</p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                <Link
-                  to="/portfolio-detail"
-                  className="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"
-                ></Link>
-                <img
-                  src="/assets/images/project-5.png"
-                  alt="project-5"
-                  className="h-52 w-full rounded-t-3xl object-cover"
-                />
-                <div className="p-5 text-sm font-bold">
-                  <h6 className="mb-1 text-black line-clamp-1 dark:text-white">
-                    Digital Art Guide
-                  </h6>
-                  <p>Branding</p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
-                <Link
-                  to="/portfolio-detail"
-                  className="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"
-                ></Link>
-                <img
-                  src="/assets/images/project-6.png"
-                  alt="project-6"
-                  className="h-52 w-full rounded-t-3xl object-cover"
-                />
-                <div className="p-5 text-sm font-bold">
-                  <h6 className="mb-1 text-black line-clamp-1 dark:text-white">
-                    Frozeverse - 3D and motion design
-                  </h6>
-                  <p>Branding, Website, App</p>
-                </div>
-              </div>
-            </SwiperSlide>
+            {props.projects &&
+              props.projects.map((project: any) => (
+                <SwiperSlide>
+                  <div className="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
+                    <Link
+                      to="/portfolio-detail"
+                      className="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"
+                    ></Link>
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="h-52 w-full rounded-t-3xl object-cover"
+                    />
+                    <div className="p-5 text-sm font-bold">
+                      <h6 className="mb-1 text-black line-clamp-1 dark:text-white">
+                        {project.name}
+                      </h6>
+                      <p>
+                        {project.tags &&
+                          project.tags.map((tag: string) => <>{tag},</>)}
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
       </div>
