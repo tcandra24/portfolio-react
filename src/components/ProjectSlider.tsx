@@ -12,6 +12,12 @@ const ProjectSlider = (props: any) => {
       ? true
       : false;
 
+  interface Projects {
+    image: string;
+    name: string;
+    tags: Array<string>;
+  }
+
   return (
     <section className="py-14 lg:py-[100px]">
       <div className="container">
@@ -104,11 +110,14 @@ const ProjectSlider = (props: any) => {
             key={isRtl ? "true" : "false"}
           >
             {props.projects &&
-              props.projects.map((project: any) => (
+              props.projects.map((project: Projects, index: number) => (
                 <SwiperSlide>
-                  <div className="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark">
+                  <div
+                    className="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark"
+                    key={index}
+                  >
                     <Link
-                      to="/portfolio-detail"
+                      to="/portfolio/show"
                       className="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"
                     ></Link>
                     <img

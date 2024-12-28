@@ -74,16 +74,6 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-            <img
-              src="/assets/images/footer-shape.png"
-              alt="footer-shape"
-              className="absolute bottom-0 right-0 sm:left-0"
-            />
-            <img
-              src="/assets/images/footer-shape-dark.png"
-              alt="footer-shape-dark"
-              className="absolute bottom-0 right-0 hidden dark:block sm:left-0"
-            />
           </div>
           <div>
             <ul className="flex flex-col gap-3 font-bold">

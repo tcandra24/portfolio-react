@@ -61,45 +61,15 @@ const PersonalPortfolio = () => {
                     className="w-full"
                   />
                 </div>
-                <h2 className="relative text-3xl font-black text-white sm:text-5xl lg:text-[80px] lg:leading-[100px] z-30">
+                <h2 className="relative text-2xl font-black text-white sm:text-3xl lg:text-[80px] lg:leading-[100px] z-30">
                   Hello Friend, I am Tito Software Engineer
-                  <svg
-                    width="59"
-                    height="107"
-                    viewBox="0 0 59 107"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="absolute bottom-5 ltr:-left-8 rtl:-right-8 rtl:rotate-y-180"
-                  >
-                    <path
-                      opacity="0.1"
-                      d="M2.99181 104.456C0.123358 63.6362 48.4681 6.12462 55.7077 39.4953C60.866 63.2729 24.484 67.2303 15.4891 1.9999"
-                      stroke="url(#paint0_linear_1479_14247)"
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_1479_14247"
-                        x1="17"
-                        y1="113"
-                        x2="17"
-                        y2="2"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stopColor="white" stopOpacity="0" />
-                        <stop offset="1" stopColor="white" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
                 </h2>
               </div>
-              <div className="absolute bottom-0 hidden w-3/4 ltr:-right-20 rtl:-left-20 rtl:rotate-y-180 lg:block">
+              <div className="absolute bottom-0 hidden w-2/5 ltr:-right-20 rtl:-left-20 rtl:rotate-y-180 lg:block">
                 <img
-                  src="/assets/images/personal-portfolio/women-banner.png"
+                  src="/assets/images/personal-portfolio/avatar-01.png"
                   alt=""
-                  className="w-full"
+                  className="w-full rounded-lg"
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 />
@@ -170,30 +140,9 @@ const PersonalPortfolio = () => {
           <div className="grid items-center gap-y-16 gap-x-8 lg:grid-cols-2">
             <div className="relative">
               <img
-                src="/assets/images/personal-portfolio/about-block.png"
-                alt=""
-                className="absolute top-8 hidden ltr:-left-16 rtl:-right-16 dark:hidden md:block"
-                data-aos="fade-right"
-                data-aos-duration="1000"
-              />
-              <img
-                src="/assets/images/personal-portfolio/about-block-dark.png"
-                alt=""
-                className="absolute top-8 hidden ltr:-left-16 rtl:-right-16 dark:hidden dark:md:block"
-                data-aos="fade-right"
-                data-aos-duration="1000"
-              />
-              <img
                 src="/assets/images/personal-portfolio/women.jpg"
                 alt=""
-                className="h-full w-full object-cover"
-              />
-              <img
-                src="/assets/images/personal-portfolio/man-about.png"
-                alt=""
-                className="absolute -bottom-10 ltr:-left-10 rtl:-right-10"
-                data-aos="fade-up"
-                data-aos-duration="1000"
+                className="h-full w-full object-cover rounded-lg"
               />
             </div>
             <div>

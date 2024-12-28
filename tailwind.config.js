@@ -29,18 +29,6 @@ export default {
       mulish: ["Mulish", "sans-serif"],
       reey: ["reey", "sans-serif"],
     },
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
-      white: "#ffffff",
-      black: "#08111F",
-      primary: "#47BDFF",
-      secondary: "#B476E5",
-      gray: {
-        DEFAULT: "#7780A1",
-        dark: "#1C2331",
-      },
-    },
     extend: {
       animation: {
         "spin-slow": "spin 5s linear infinite",
@@ -53,7 +41,19 @@ export default {
           },
         },
       }),
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        white: "#ffffff",
+        black: "#2a2a2a",
+        primary: "#c9c9c9",
+        secondary: "#828282",
+        gray: {
+          DEFAULT: "#7780A1",
+          dark: "#1C2331",
+        },
+      },
     },
   },
-  plugins: [rotateX, tailwindTypography, daisyui],
+  plugins: [rotateX, tailwindTypography],
 };
