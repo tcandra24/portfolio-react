@@ -18,7 +18,7 @@ const routes = [
     element: <Portfolio />,
   },
   {
-    path: "/portfolio/show",
+    path: "/portfolio/show/:id",
     element: <PortfolioShow />,
   },
 ];

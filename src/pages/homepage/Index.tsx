@@ -182,10 +182,11 @@ const PersonalPortfolio = () => {
                   <p>Github projects</p>
                 </div>
               </div>
-              <p className="text-lg font-medium">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua ut
-                enim ad minim veniam, quis nostrud exercitation.
+              <p className="text-lg font-medium text-justify">
+                My main programming languages ​​are Javascript and Framework
+                like Vue and React library, I'm also still learning Angular and
+                Svelte. I tried to find out the differences between existing
+                Javascript frameworks and libraries, Thanks.
               </p>
             </div>
           </div>
@@ -243,7 +244,7 @@ const PersonalPortfolio = () => {
             </div>
             <div className="mt-10 pr-4 md:pr-12">
               <img
-                src="/assets/images/personal-portfolio/contact-email.png"
+                src="/assets/images/version-control-banner.svg"
                 alt=""
                 data-aos="fade-down"
                 data-aos-duration="1000"

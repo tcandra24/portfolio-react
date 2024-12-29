@@ -13,7 +13,7 @@ const ProjectSlider = (props: any) => {
       : false;
 
   interface Projects {
-    image: string;
+    id: number;
     name: string;
     tags: Array<string>;
   }
@@ -110,18 +110,18 @@ const ProjectSlider = (props: any) => {
             key={isRtl ? "true" : "false"}
           >
             {props.projects &&
-              props.projects.map((project: Projects, index: number) => (
+              props.projects.map((project: Projects) => (
                 <SwiperSlide>
                   <div
                     className="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark"
-                    key={index}
+                    key={project.id}
                   >
                     <Link
-                      to="/portfolio/show"
+                      to={`/portfolio/show/${project.id}`}
                       className="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"
                     ></Link>
                     <img
-                      src={project.image}
+                      src={`https://ui-avatars.com/api/?name=${project.name}&background=random`}
                       alt={project.name}
                       className="h-52 w-full rounded-t-3xl object-cover"
                     />
@@ -129,10 +129,16 @@ const ProjectSlider = (props: any) => {
                       <h6 className="mb-1 text-black line-clamp-1 dark:text-white">
                         {project.name}
                       </h6>
-                      <p>
+                      <div className="flex flex-row gap-2">
                         {project.tags &&
-                          project.tags.map((tag: string) => <>{tag},</>)}
-                      </p>
+                          project.tags.map((tag: string) => (
+                            <>
+                              <div className="badge badge-info gap-2 text-base text-white">
+                                {tag}
+                              </div>
+                            </>
+                          ))}
+                      </div>
                     </div>
                   </div>
                 </SwiperSlide>

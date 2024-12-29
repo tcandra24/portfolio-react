@@ -55,5 +55,5 @@ export default {
       },
     },
   },
-  plugins: [rotateX, tailwindTypography],
+  plugins: [rotateX, tailwindTypography, daisyui],
 };
