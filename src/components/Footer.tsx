@@ -6,7 +6,11 @@ const Footer = () => {
       <div className="container">
         <div className="grid gap-y-10 gap-x-4 py-14 sm:grid-cols-3 lg:grid-cols-5 lg:py-[100px]">
           <div className="relative">
-            <img src="/assets/images/logo.png" alt="plurk" className="h-7" />
+            <img
+              src="/assets/images/logo-dark.png"
+              alt="plurk"
+              className="h-7"
+            />
             <ul className="mt-12 flex items-center gap-8">
               <li>
                 <Link to="#">

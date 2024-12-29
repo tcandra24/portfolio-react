@@ -224,19 +224,20 @@ const PersonalPortfolio = () => {
               <div className="text-center md:ltr:text-left md:rtl:text-right lg:w-3/4">
                 <div className="mb-10">
                   <h6 className="mb-4 text-lg font-extrabold uppercase text-secondary">
-                    <span className="text-primary">/</span> get started
+                    <span className="text-primary">/</span> search my github ?
                   </h6>
                   <h2 className="text-3xl font-black leading-tight text-white md:text-[40px]">
-                    We Help Companies Move Faster
+                    Here we go
                   </h2>
                 </div>
                 <div className="mt-8">
-                  <Link
-                    to="#"
+                  <a
+                    href="https://github.com/tcandra24"
+                    target="_blank"
                     className="bg-secondary py-3 px-5 font-bold text-white transition hover:bg-primary"
                   >
-                    Contact Us
-                  </Link>
+                    Check this out
+                  </a>
                 </div>
               </div>
             </div>
