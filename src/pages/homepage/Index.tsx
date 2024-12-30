@@ -1,16 +1,13 @@
 import CountUp from "react-countup";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { IRootState } from "@/store";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import "swiper/css/navigation";
-import "swiper/css";
 
 import ProjectSlider from "@/components/ProjectSlider";
 import { useEffect, useState } from "react";
 
-const PersonalPortfolio = () => {
+const HomePage = () => {
   document.title = "Personal Portfolio | Tito Candra Pratama";
   const isRtl =
     useSelector((state: IRootState) => state.themeConfig.direction) === "rtl"
@@ -183,8 +180,8 @@ const PersonalPortfolio = () => {
                 </div>
               </div>
               <p className="text-lg font-medium text-justify">
-                My main programming languages ​​are Javascript and Framework
-                like Vue and React library, I'm also still learning Angular and
+                My main programming languages are Javascript and Framework like
+                Vue and React library, I'm also still learning Angular and
                 Svelte. I tried to find out the differences between existing
                 Javascript frameworks and libraries, Thanks.
               </p>
@@ -257,4 +254,4 @@ const PersonalPortfolio = () => {
   );
 };
 
-export default PersonalPortfolio;
+export default HomePage;

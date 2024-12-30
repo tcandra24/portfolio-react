@@ -4,7 +4,11 @@ import { Link, NavLink } from "react-router-dom";
 import { IRootState } from "@/store";
 import { toggleTheme, toggleDirection } from "@/store/themeConfigSlice";
 
-const Header = (props: any) => {
+interface Props {
+  className: string;
+}
+
+const Header = (props: Props) => {
   const themeConfig = useSelector((state: IRootState) => state.themeConfig);
   const dispatch = useDispatch();
 

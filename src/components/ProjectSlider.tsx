@@ -1,22 +1,29 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { IRootState } from "@/store";
 
-const ProjectSlider = (props: any) => {
+import "swiper/css";
+import "swiper/css/navigation";
+
+interface Projects {
+  id: number;
+  name: string;
+  tags: Array<string>;
+}
+
+interface Props {
+  title1: string;
+  title2: string;
+  projects: Array<Projects>;
+}
+
+const ProjectSlider = (props: Props) => {
   const isRtl =
     useSelector((state: IRootState) => state.themeConfig.direction) === "rtl"
       ? true
       : false;
-
-  interface Projects {
-    id: number;
-    name: string;
-    tags: Array<string>;
-  }
 
   return (
     <section className="py-14 lg:py-[100px]">
