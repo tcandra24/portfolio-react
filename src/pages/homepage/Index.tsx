@@ -46,8 +46,8 @@ const HomePage = () => {
 
   return (
     <div className="overflow-hidden">
-      <div className="bg-black pt-[82px] lg:overflow-hidden lg:pt-[106px]">
-        <div className="bg-[url(/assets/images/overlay-noise.png)] bg-cover bg-no-repeat pt-14 lg:pt-20">
+      <div className="bg-black bg-[url(/assets/images/world-map.png)] bg-cover bg-no-repeat pt-[82px] lg:overflow-hidden lg:pt-[106px]">
+        <div className="pt-14 lg:pt-20">
           <div className="container">
             <div className="relative">
               <div className="text-center lg:w-2/3 lg:ltr:text-left mb-16 lg:rtl:text-right">
