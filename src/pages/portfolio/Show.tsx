@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 
 const Portfoliodetail = () => {
   document.title =
-    "Portfolio Detail | Plurk – Tailwind CSS Multipurpose Landing Templates";
+    "Portfolio Detail | Plurk - Tailwind CSS Multipurpose Landing Templates";
 
-  const { id } = useParams<{ id: string | undefined }>();
+  const { id } = useParams<{ id: string }>();
   const [project, setProject] = useState<Project>();
 
   interface Project {
@@ -50,6 +50,8 @@ const Portfoliodetail = () => {
   };
 
   useEffect(() => {
+    if (!id) return;
+
     fetchProject(id);
   });
 
