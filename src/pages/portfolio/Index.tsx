@@ -24,8 +24,8 @@ const Portfolio = () => {
     name: string;
   }
 
-  const [projects, setProjects] = useState(null);
-  const [categories, setCategories] = useState(null);
+  const [projects, setProjects] = useState<Projects[]>([]);
+  const [categories, setCategories] = useState<Categories[]>([]);
 
   const fetchProjects = async () => {
     try {
@@ -126,7 +126,7 @@ const Portfolio = () => {
                         All Work
                       </button>
                     </li>
-                    {categories &&
+                    {categories.length > 0 &&
                       categories.map((category: Categories) => (
                         <>
                           <li
@@ -148,7 +148,7 @@ const Portfolio = () => {
                   </ul>
                 </div>
                 <div className="projects mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                  {projects &&
+                  {projects.length > 0 &&
                     projects.map((project: Projects) => (
                       <>
                         <div
